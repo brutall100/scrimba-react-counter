@@ -8,6 +8,7 @@ import RippleButton from './components/ripple-button.jsx'
 import Stats from './components/stats.jsx'
 import StepPicker from './components/step-picker.jsx'
 import ThemeToggle from './components/theme-toggle.jsx'
+import WorldCounter from './components/world-counter.jsx'
 import { counterReducer, initialState } from './lib/counter-reducer.js'
 import { usePersistedReducer } from './hooks/use-persisted-reducer.js'
 
@@ -145,6 +146,7 @@ export default function App() {
         </section>
 
         <div className="side">
+          <WorldCounter />
           <GoalMeter
             count={count}
             goal={goal}
@@ -162,7 +164,7 @@ export default function App() {
           <a href="https://scrimba.com" target="_blank" rel="noreferrer">
             Scrimba
           </a>
-          . Saved in your browser only.
+          . Your own count stays in your browser; the world counter is shared by everyone.
         </p>
       </footer>
     </>
