@@ -1,0 +1,63 @@
+/*
+  Neon Odometer palette — every colour in the project lives here.
+  Change these values to re-skin the whole app.
+*/
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --bg: #eeedf5;            /* page background: cool lilac paper */
+  --surface: #ffffff;       /* cards and panels */
+  --surface-2: #f6f5fb;     /* inputs, inner wells */
+  --line: #d8d5e8;          /* borders */
+  --text: #1b1830;          /* main text */
+  --muted: #514c6e;         /* secondary text */
+
+  --accent: #a97a22;        /* brass: fills, rivets, glows */
+  --accent-strong: #7a5410; /* brass dark enough for text */
+  --on-accent: #1b1830;     /* text on brass */
+  --accent-2: #6c2bd9;      /* neon violet: primary buttons */
+  --on-accent-2: #ffffff;   /* text on violet */
+  --accent-3: #007a63;      /* neon mint: small highlights */
+
+  --wheel-bg: #1b1830;      /* odometer wheel */
+  --wheel-fg: #f6f5fb;      /* odometer digit */
+  --shadow: rgb(27 24 48 / 0.16);
+
+  --glow-opacity: 0.4;
+  --particle-opacity: 0.35;
+  --gear-opacity: 0.35;
+
+  --font-display: 'Chakra Petch', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius: 6px;
+  --cut: 16px;              /* size of the clipped panel corners */
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0e0c1c;
+  --surface: #181530;
+  --surface-2: #211d3f;
+  --line: #3a3366;
+  --text: #ece9ff;
+  --muted: #b1abdc;
+
+  --accent: #e0a93b;
+  --accent-strong: #e8b85a;
+  --on-accent: #0e0c1c;
+  --accent-2: #a57bff;
+  --on-accent-2: #0e0c1c;
+  --accent-3: #2ef2c0;
+
+  --wheel-bg: #ece9ff;
+  --wheel-fg: #181530;
+  --shadow: rgb(0 0 0 / 0.45);
+
+  --glow-opacity: 0.55;
+  --particle-opacity: 0.55;
+  --gear-opacity: 0.45;
+}
