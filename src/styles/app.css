@@ -802,6 +802,127 @@ kbd:first-child {
 
 .side .reveal:nth-child(2) { transition-delay: 0.08s; }
 .side .reveal:nth-child(3) { transition-delay: 0.16s; }
+.side .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* World counter */
+.world {
+  box-shadow:
+    inset 3px 0 0 var(--accent-3),
+    0 10px 30px var(--shadow);
+}
+
+.world .card__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.world__globe {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--accent-3);
+  stroke-width: 1.8;
+}
+
+.world__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.world__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.world__status--live,
+.world__status--online {
+  color: var(--accent-3);
+}
+
+.world__status--live .world__dot,
+.world__status--online .world__dot {
+  background: var(--accent-3);
+}
+
+.world__status--live .world__dot {
+  animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+.world__status--demo {
+  color: var(--accent-strong);
+}
+
+.world__status--demo .world__dot {
+  background: var(--accent);
+}
+
+@keyframes live-pulse {
+  50% {
+    opacity: 0.35;
+    transform: scale(1.5);
+  }
+}
+
+.world__value {
+  position: relative;
+  width: fit-content;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: clamp(2rem, 6vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--text);
+}
+
+/* A ring that ripples out each time the shared number changes */
+.world__ping {
+  position: absolute;
+  top: 50%;
+  right: -18px;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--accent-3);
+  opacity: 0;
+  animation: ping 1s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ping {
+  from {
+    opacity: 1;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+.world__note {
+  margin: 6px 0 16px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.world__button {
+  width: 100%;
+}
 
 /* Goal */
 .goal__input input {
