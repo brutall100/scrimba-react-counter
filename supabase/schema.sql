@@ -16,6 +16,12 @@ on conflict (id) do nothing;
 --    change the number directly or set it to 999999.
 alter table public.world_counter enable row level security;
 
+-- Table rights: visitors may only SELECT (needed by the Data API and Realtime).
+-- Written out on purpose, so it also works when "Automatically expose new
+-- tables" is turned off, and so nobody gets insert/update/delete rights.
+revoke all on public.world_counter from anon, authenticated;
+grant select on public.world_counter to anon, authenticated;
+
 drop policy if exists "Anyone can read the world counter" on public.world_counter;
 create policy "Anyone can read the world counter"
   on public.world_counter
